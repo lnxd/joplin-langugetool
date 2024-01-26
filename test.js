@@ -2,14 +2,23 @@
 let text = "This is a test with a miztake";
 
 let url = "https://api.languagetoolplus.com/v2/check";
+let url_2 = url.split("check")[0] + "words/add"
+console.log(url_2);
+
+// let data_obj = {
+//     "text": text,
+//     "language": "auto",
+//     // "disabledRules": "",
+//     // "motherTongue": "",
+//     // "preferredVariants": "",
+//     // "enabledCategories": "",
+//     // "disabledCategories": "",
+// }
+
 let data_obj = {
-    "text": text,
-    "language": "auto",
-    // "disabledRules": "",
-    // "motherTongue": "",
-    // "preferredVariants": "",
-    // "enabledCategories": "",
-    // "disabledCategories": "",
+    word: "mstake",
+    username: "alberto.di.b.o@gmail.com",
+    apiKey: "pit-CUO0ftJ4abbk"
 }
 
 let data = new FormData();
@@ -28,4 +37,4 @@ let options = {
 }
 
 
-const response = fetch(url, options).then(response => response.json()).then(response => console.log(response));
+const response = fetch(url_2, options).then(response => response.json()).then(response => console.log(response));
